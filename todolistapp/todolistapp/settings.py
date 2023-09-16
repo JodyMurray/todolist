@@ -53,8 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = ["http://localhost:8080",
-                        'https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://8000-jodymurray-todolist-gkegw1vqn99.ws-eu104.gitpod.io','https://*.127.0.0.1']
 
 
 CORS_ALLOWED_ORIGINS = [
