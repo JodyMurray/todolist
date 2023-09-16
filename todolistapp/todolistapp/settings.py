@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@@qdk-vuk7_-)(60$-6cus2bm2ts7f-58jb+6s+$_$c+p4e1y5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'localhost']
 
 
 # Application definition
@@ -38,17 +38,32 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = ["http://localhost:8080",
+                        'https://*.127.0.0.1']
+
+
+CORS_ALLOWED_ORIGINS = [
+
+    "http://localhost:8080",
+    'https://*.127.0.0.1',
+]
+
+SITE_ID = 1
 
 ROOT_URLCONF = 'todolistapp.urls'
 
