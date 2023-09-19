@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'todolistapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
     'corsheaders',
-
 ]
 
 MIDDLEWARE = [
